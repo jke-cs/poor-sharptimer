@@ -1,5 +1,5 @@
 > [!NOTE]
-> The original creator of SharpTimer is dea_bb, who discontinued support for the project after version 0.2.6. This fork is now maintaned by the community, mainly [rcnoob](https://github.com/rcnoob).
+> The original creator of SharpTimer is deafps, who discontinued support for the project after version 0.2.6. This fork is now maintaned by the community, mainly [rcnoob](https://github.com/rcnoob).
 
 
 
@@ -84,19 +84,15 @@ SharpTimer is a "simple" Surf/KZ/Bhop/MG/Deathrun/etc. CS2 Timer plugin using Co
 
 [**SharpTimerModelSetter** *(optional but recommended for custom player models)*](https://github.com/johandrevwyk/STCustomModels)
 
-[**MovementUnlocker** *(optional but recommended for surf and bhop servers)*](https://github.com/Source2ZE/MovementUnlocker)
+[**MovementUnlocker** *(optional but recommended)*](https://github.com/Source2ZE/MovementUnlocker)
 
 [**RampBugFix** *(optional but recommended for surf servers)*](https://github.com/Interesting-exe/CS2Fixes-RampbugFix/)
 
 [**Web panel** *(optional but recommended)*](https://github.com/Letaryat/sharptimer-web-panel)
 
-[**SharpTimer-WallLists** *(optional but recommended)*](https://github.com/M-archand/SharpTimer-WallLists)
+[**SharpTimer-WallLists** *(optional but recommended)*](https://github.com/M-archand/SharpTimer-WallLists/tree/PointsList)
 
 [**CS2-TeleportAnglesFix** *(optional but recommended)*](https://github.com/M-archand/CS2-TeleportAnglesFix)
-
-[**STFixes** *(optional but recommended)*](https://github.com/rcnoob/STFixes)
-
-[**Flashing HUD Fix** *(optional but recommended)*](https://github.com/deabb/CS2FlashingHtmlHudFix)
 
 
 ## Install
@@ -150,7 +146,7 @@ SharpTimer is a "simple" Surf/KZ/Bhop/MG/Deathrun/etc. CS2 Timer plugin using Co
   - [x] Max
   - [x] Height
   - [x] Width
-  - [ ] Sync
+  - [x] Sync
   - [ ] Jump Types
     - [x] Long Jump
     - [x] BunnyHop
@@ -166,7 +162,4 @@ SharpTimer is a "simple" Surf/KZ/Bhop/MG/Deathrun/etc. CS2 Timer plugin using Co
   - [ ] Strafe Sync Bar on HUD
 
 
-## Authors:
-[DEA_BB](https://twitter.com/dea_bb)
-[Letaryat](https://github.com/Letaryat)
-[rcnoob](https://github.com/rcnoob)
+## Author: [@DEA_BB](https://twitter.com/dea_bb)
