@@ -339,7 +339,7 @@ namespace SharpTimer
                 var botSlot = bot.Slot;
                 var botName = bot.PlayerName;
 
-                AddTimer(1.0f, () =>
+                AddTimer(5.0f, () =>
                 {
                     OnPlayerConnect(bot, true);
                     connectedReplayBots[botSlot] = new CCSPlayerController(bot.Handle);

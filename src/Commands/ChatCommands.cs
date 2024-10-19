@@ -1054,6 +1054,14 @@ namespace SharpTimer
             }
         }
 
+
+            [ConsoleCommand("say !r", "Alias for css_r to teleport to start")]
+            [CommandHelper(whoCanExecute: CommandUsage.CLIENT_ONLY)]
+            public void RespawnPlayerAliasCommand(CCSPlayerController? player, CommandInfo command)
+            {
+                RespawnPlayerCommand(player, command);
+            }
+
         [ConsoleCommand("css_end", "Teleports you to end")]
         [CommandHelper(whoCanExecute: CommandUsage.CLIENT_ONLY)]
         public void EndPlayerCommand(CCSPlayerController? player, CommandInfo command)

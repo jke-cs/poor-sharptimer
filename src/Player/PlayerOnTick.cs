@@ -173,19 +173,41 @@ namespace SharpTimer
 
                         if (playerTimer.MovementService!.OldJumpPressed == true) playerTimer.MovementService.OldJumpPressed = false;
 
-                        string hudContent = (hudEnabled ? timerLine +
-                                            (VelocityHudEnabled ? veloLine : "") +
-                                            (StrafeHudEnabled && !playerTimer.IsReplaying ? syncLine : "") +
-                                            infoLine : "") +
-                                            (keyEnabled && !playerTimer.IsReplaying ? keysLineNoHtml : "") +
-                                            ((playerTimer.IsTester && !playerTimer.IsReplaying) ? $"{(!keyEnabled ? "<br>" : "")}" + playerTimer.TesterBigGif : "") +
-                                            ((playerTimer.IsVip && !playerTimer.IsTester && !playerTimer.IsReplaying) ? $"{(!keyEnabled ? "<br><br>" : "")}" + $"<br><img src='https://files.catbox.moe/{playerTimer.VipBigGif}.gif'><br>" : "") +
-                                            ((playerTimer.IsReplaying && playerTimer.VipReplayGif != "x") ? playerTimer.VipReplayGif : "");
+                        // enable hud if isTimerRunning, i added this because of the Weapon Paints Menu update
+                        string hudContent = "";
+                        bool previousTimerState = false; // Track the previous state of isTimerRunning
 
-                        if (hudEnabled || keyEnabled)
+                        // Check if the timer is running
+                        if (isTimerRunning)
                         {
+                        // Build the HUD content if the timer is running
+                        hudContent = (hudEnabled ? timerLine +
+                                                (VelocityHudEnabled ? veloLine : "") +
+                                                (StrafeHudEnabled && !playerTimer.IsReplaying ? syncLine : "") +
+                                                infoLine : "") +
+                                                (keyEnabled && !playerTimer.IsReplaying ? keysLineNoHtml : "") +
+                                                ((playerTimer.IsTester && !playerTimer.IsReplaying) ? $"{(!keyEnabled ? "<br>" : "")}" + playerTimer.TesterBigGif : "") +
+                                                ((playerTimer.IsVip && !playerTimer.IsTester && !playerTimer.IsReplaying) ? $"{(!keyEnabled ? "<br><br>" : "")}" + $"<br><img src='https://files.catbox.moe/{playerTimer.VipBigGif}.gif'><br>" : "") +
+                                                ((playerTimer.IsReplaying && playerTimer.VipReplayGif != "x") ? playerTimer.VipReplayGif : "");
+
+                        // Print the HUD content when timer is running
                             player.PrintToCenterHtml(hudContent);
                         }
+                        else
+                        {
+                        // Clear the HUD when the timer stops
+                        if (previousTimerState == true) // Only clear if it was previously running
+                        {
+                            player.PrintToCenterHtml(""); // Clear HUD content
+                        }
+                        }
+
+                        // Update the previous timer state
+                        previousTimerState = isTimerRunning;
+
+
+
+
 
                         if (isTimerRunning)
                         {
