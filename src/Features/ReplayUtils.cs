@@ -289,7 +289,7 @@ namespace SharpTimer
                     Server.ExecuteCommand("bot_zombie 1");
                     Server.ExecuteCommand("sv_cheats 0");
                     
-                    AddTimer(0.5f, () =>
+                    AddTimer(3.0f, () =>
                     {
                         foundReplayBot = false;
                         SharpTimerDebug($"Trying to find replay bot!");
@@ -339,7 +339,7 @@ namespace SharpTimer
                 var botSlot = bot.Slot;
                 var botName = bot.PlayerName;
 
-                AddTimer(5.0f, () =>
+                AddTimer(3.0f, () =>
                 {
                     OnPlayerConnect(bot, true);
                     connectedReplayBots[botSlot] = new CCSPlayerController(bot.Handle);

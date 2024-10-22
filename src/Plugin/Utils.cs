@@ -287,38 +287,6 @@ namespace SharpTimer
             }
         }
 
-        public double CalculatePoints(int timerTicks, int style)
-        {
-            double basePoints = 10000.0;
-            double timeFactor = 0.0001;
-            double tierMult = 0.1;
-            double styleMult = GetStyleMultiplier(style);
-
-            if (currentMapTier != null)
-            {
-                tierMult = (double)(currentMapTier * 0.1);
-            }
-
-            double points = basePoints / (timerTicks * timeFactor);
-            return points * tierMult * styleMult;
-        }
-
-        public double CalculatePBPoints(int timerTicks, int style)
-        {
-            double basePoints = 10000.0;
-            double timeFactor = 0.01;
-            double tierMult = 0.1;
-            double styleMult = GetStyleMultiplier(style);
-
-            if (currentMapTier != null)
-            {
-                tierMult = (double)(currentMapTier * 0.1);
-            }
-
-            double points = basePoints / (timerTicks * timeFactor);
-            return points * tierMult * styleMult;
-        }
-
         string ParseColorToSymbol(string input)
         {
             Dictionary<string, string> colorNameSymbolMap = new(StringComparer.OrdinalIgnoreCase)
@@ -842,7 +810,7 @@ namespace SharpTimer
 
                     if (enableReplays && enableSRreplayBot)
                     {
-                        AddTimer(8.0f, () =>
+                        AddTimer(10.0f, () =>
                         {
                             if (ConVar.Find("mp_force_pick_time")!.GetPrimitiveValue<float>() == 1.0)
                                 _ = Task.Run(async () => await SpawnReplayBot());
